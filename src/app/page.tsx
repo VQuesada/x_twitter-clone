@@ -10,7 +10,7 @@ export default async function Home() {
 
   const { data: posts } = await supabase
     .from(TABLES_NAMES.POSTS)
-    .select('*')
+    .select('*, users(name, user_name, avatar_url)')
 
   if (session == null) {
     redirect('/login')

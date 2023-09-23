@@ -31,7 +31,7 @@ The types will be written on the terminal. Copy and paste them on a file of your
 
 Alternativly, you can write the types directly to a file.
 
-First you have to create the folder that will contain the types. In our case it's './src/app/types'
+First, you'll have to create the folder that will contain the types. In our case it's './src/app/types'
 
 ```bash
 npx supabase gen types typescript --project-id <project-id> > ./src/app/types/datasbase.ts

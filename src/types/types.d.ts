@@ -1,13 +1,3 @@
-export interface User {
-  id: string
-  name: string
-  user_name: string
-  avatar_url: string
-}
+import { type Database } from '@/types/datasbase'
 
-export interface Post {
-  id: string
-  created_at: string
-  content: string
-  user: User
-}
+type Post = Database.public.Tables.posts.Row & { user: Database.public.Tables.users.Row }

@@ -4,13 +4,13 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { PostsList } from './components/posts-list'
-import { type Post } from '@/types/types'
+import { type Database } from '@/types/datasbase'
 
 export default async function Home() {
-  const supabase = createServerComponentClient({ cookies })
+  const supabase = createServerComponentClient<Database>({ cookies })
   const { data: { session } } = await supabase.auth.getSession()
 
-  const { data: posts }: { data: Post[] | null } = await supabase
+  const { data: posts } = await supabase
     .from(TABLES_NAMES.POSTS)
     .select('*, user:users(name, user_name, avatar_url)')
 

@@ -3,26 +3,27 @@ import { TABLES_NAMES } from '@/consts/ddbb/tablesNames'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
+import { PostsList } from './components/posts-list'
+import { type Post } from '@/types/types'
 
 export default async function Home() {
   const supabase = createServerComponentClient({ cookies })
   const { data: { session } } = await supabase.auth.getSession()
 
-  const { data: posts } = await supabase
+  const { data: posts }: { data: Post[] | null } = await supabase
     .from(TABLES_NAMES.POSTS)
-    .select('*, users(name, user_name, avatar_url)')
+    .select('*, user:users(name, user_name, avatar_url)')
 
   if (session == null) {
     redirect('/login')
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <AuthButtonServer />
-      <h1>X</h1>
-      <pre>
-        {JSON.stringify(posts, null, 2)}
-      </pre>
+    <main className="flex min-h-screen flex-col items-center justify-between">
+      <section className='max-w-[600px] mx-auto border-r border-l border-white/80 min-h-screen'>
+        <AuthButtonServer />
+        <PostsList posts={posts} />
+      </section>
     </main>
   )
 }

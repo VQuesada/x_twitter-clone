@@ -8,7 +8,7 @@ First, run the development server:
 pnpm dev
 ```
 
-###Generate supabase types:
+### Generate supabase types:
 1- Log in to supabase
 ```bash
 npx supabase login

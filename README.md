@@ -14,10 +14,9 @@ pnpm dev
 npx supabase login
 ```
 
-go to the url prompted in the terminal and create a new token
-this token grants access to ALL your databases, so be careful with it
+go to the url prompted in the terminal and create a new token. This token grants access to ALL your databases, so be careful with it.
 
-paste the token in the terminal
+Paste the token in the terminal
 
 
 2- Generate the types
@@ -26,6 +25,7 @@ npx supabase gen types typescript --project-id <project-id>
 ```
 
 To get the project id:
-access your supabase project, go to Project Settings (bottom icon in the left menu), and copy the Referenc ID
+
+Access your supabase project, go to Project Settings (bottom icon in the left menu), and copy the Referenc ID
 
 The types will be written on the terminal. Copy and paste them on a file of your choice

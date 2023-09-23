@@ -5,7 +5,7 @@ import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { PostsList } from './components/posts-list'
 import { type Database } from '@/types/datasbase'
-import { ComposePost } from './components/compose-post'
+import { ComposePost } from './components/compose-post/compose-post'
 
 export default async function Home() {
   const supabase = createServerComponentClient<Database>({ cookies })

@@ -24,7 +24,7 @@ Paste the token in the terminal
 npx supabase gen types typescript --project-id <project-id>
 ```
 
-To get the project id:
-Access your supabase project, go to Project Settings (bottom icon in the left menu), and copy the Referenc ID
+<p>To get the project id:</p>
+<p>Access your supabase project, go to Project Settings (bottom icon in the left menu), and copy the Referenc ID</p>
 
 The types will be written on the terminal. Copy and paste them on a file of your choice

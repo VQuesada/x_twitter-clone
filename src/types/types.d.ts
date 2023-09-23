@@ -1,5 +1,6 @@
-import { type Database } from '@/types/datasbase'
+import { type Database } from './datasbase'
 
-type User = Database.public.Tables.users.Row
+type UserEntity = Database['public']['Tables']['users']['Row']
+type PostEntity = Database['public']['Tables']['posts']['Row']
 
-type Post = Database.public.Tables.posts.Row & { user: User }
+export type Post = PostEntity & { user: UserEntity }

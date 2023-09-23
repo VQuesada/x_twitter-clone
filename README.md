@@ -14,7 +14,7 @@ pnpm dev
 npx supabase login
 ```
 
-go to the url prompted in the terminal and create a new token. This token grants access to ALL your databases, so be careful with it.
+Go to the url prompted in the terminal and create a new token. This token grants access to ALL your databases, so be careful with it.
 
 Paste the token in the terminal
 

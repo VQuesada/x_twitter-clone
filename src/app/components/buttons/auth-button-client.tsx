@@ -1,8 +1,8 @@
 'use client'
 
 import { type Session, createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import { GithubButton } from './github-button'
-import { DefaultButton } from './default-button'
+import { GithubButton } from '@/components/buttons/github-button'
+import { DefaultButton } from '@/components/buttons/default-button'
 import { type FC } from 'react'
 import { useRouter } from 'next/navigation'
 

@@ -20,7 +20,7 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <section className='max-w-[600px] mx-auto border-r border-l border-white/80 min-h-screen'>
+      <section className='w-[600px] mx-auto border-r border-l border-white/20 min-h-screen'>
         <AuthButtonServer />
         <PostsList posts={posts} />
       </section>

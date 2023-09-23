@@ -14,24 +14,24 @@ interface PostCardProps {
 
 export const PostCard: FC<PostCardProps> = ({ name, userName, content, avatarUrl }) => {
   return (
-    <Card className="bg-transparent border-transparent">
+    <Card className="bg-transparent shadow-none hover:bg-slate-800 transition border-b rounded-none border-white/20 cursor-pointer w-full">
       <CardHeader className="justify-between">
         <div className="flex gap-x-3 items-center justify-center">
           <Link href={`/${userName}`}>
             <Avatar isBordered radius="full" size="md" src={avatarUrl} />
           </Link>
-          <div className="flex flex-row gap-2 items-start justify-center items-center">
+          <div className="flex flex-row gap-2 justify-center items-center">
             <h4 className="text-small font-semibold leading-none text-default-600">{name}</h4>
             <h5 className="text-small tracking-tight text-default-400">@{userName}</h5>
           </div>
         </div>
       </CardHeader>
-      <CardBody className="px-3 py-0 text-small text-default-400">
+      <CardBody className="px-3 py-0 text-medium text-default-400">
         <p>
           {content}
         </p>
       </CardBody>
-      <CardFooter className="gap-3">
+      <CardFooter className="justify-between">
         <button>
           <IconMessageCircle className='w-4 h-4' />
         </button>
